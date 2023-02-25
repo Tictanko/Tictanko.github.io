@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Tictanko?
 subtitle: ''
-description: ''
+description: 'Star Lost'
 keywords:
-author: John Doe
-language: en
-timezone: ''
+author: tictanko
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -97,9 +97,25 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/Tictanko/Tictanko.github.io.git  
+  #你的仓库地址
+  branch: master
+symbols_count_time:
+  symbols: true                
+  # 文章字数统计
+  time: true                   
+  # 文章阅读时长
+  total_symbols: true          
+  # 站点总字数统计
+  total_time: true             
+  # 站点总阅读时长
+  exclude_codeblock: false     
+  # 排除代码字数统计
+passage_end_tag:
+  enabled: true
