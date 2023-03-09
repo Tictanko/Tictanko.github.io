@@ -6229,14 +6229,14 @@ pre .deletion {
 }
 @media (prefers-color-scheme: dark) {
   .first-screen-container {
-    background: url("/images/night.png") center center/cover no-repeat !important;
+    background: url("/images/night.jpg") center center/cover no-repeat !important;
   }
 }
 .light-mode .first-screen-container {
   background: url("/images/light.jpg") center center/cover no-repeat !important;
 }
 .dark-mode .first-screen-container {
-  background: url("/images/night.png") center center/cover no-repeat !important;
+  background: url("/images/night.jpg") center center/cover no-repeat !important;
 }
 .image-viewer-container {
   position: fixed;
