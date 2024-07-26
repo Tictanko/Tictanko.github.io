@@ -5,10 +5,35 @@
   
   <entry>
     <title>blender学习记录之Smooth 3D living room</title>
-    <link href="/2024/07/25/post/"/>
-    <url>/2024/07/25/post/</url>
+    <link href="/2024/07/26/blender2/"/>
+    <url>/2024/07/26/blender2/</url>
     
-    <content type="html"><![CDATA[<p>记录一下学习blender的学习过程</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>blender学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>blender学习记录之Smooth 3D living room  1</title>
+    <link href="/2024/07/25/blender1/"/>
+    <url>/2024/07/25/blender1/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>记录一下学习blender的学习过程,这个模型是按照油管上的一个博主的内容做的<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Blender 3D Beginner Tutorial: Smooth 3D Living Room](https://youtu.be/dEGJeVnWZAA?si=sKss_-PK8lcj_gxr)">[1]</span></a></sup>，</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="https://youtu.be/dEGJeVnWZAA?si=sKss_-PK8lcj_gxr">Blender 3D Beginner Tutorial: Smooth 3D Living Room</a><a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>]]></content>
     
     
     <categories>
