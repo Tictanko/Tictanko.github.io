@@ -4,11 +4,65 @@
   
   
   <entry>
-    <title>blender学习记录之Smooth 3D living room</title>
+    <title>Linear Regression</title>
+    <link href="/2024/07/27/Linear-Regression/"/>
+    <url>/2024/07/27/Linear-Regression/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数据集是用于线性回归计算的薪资数据集，csv格式只有工作年限(YearsExperience)和薪资(Salary)主要采用了numpy和matplotlib库实现代码。 # 基本内容线性回归模型属于监督型模型，一维的linear regression model是<br /><span class="math display">\[E=mc^2\]</span> ##</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>机器学习</tag>
+      
+      <tag>线性回归</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>随笔一篇</title>
+    <link href="/2024/07/26/wrinting727/"/>
+    <url>/2024/07/26/wrinting727/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="788cb2a8e8c7c4fbc82e66ec0ace438475d60d5c5766e12de8468340d3536a4d">4630436162ade97ba2718b7d0c4b3b630ef8b034c35893a7afa4c54a5752d90eba191a593f89497fdfca691efaf72d5caa0c664d8e7a85bd833fac72ade59ddbf66b4bdec75a2ed1e83f57bcb279b78c8202c7ce8d3eb34051070935a62ccbf9be563b576fcb19a6e4c095e03496f05d0fec5de7a8af18b78d977beffb6874da4670293f572d11dfa81b48ce6cd0448f0a018d399d177f54eb76d77c6c17f9c36f9f255c3de0f225f9e9c6b4f23d83fc3307cf9be8ef0d2bb8d0474ceec45d7300894f4b8f11650b44ad991ba7d43228d49371fdc826ee64ef965f7f9da75f1bada747e79a3b422cc1d5f2e2094c9e669283cc6dbb839e4fb6adaaaab5a5df04ed7e145022c07c48821baf1e8eeb22999bf71199586896cf90fed2c983728db62230bda10d972c764e3229e40cc3e9c2541a4361f8d1a48dbfff41a49a2ad2ec7a8a9a786c104ee6aa8b713533888cc2cce330aeab25b78d8300740003e714909912e968f1a91cf0db07b69ec70cbf88bd97ef98be8310f0609a5712952391951659063d205b75d1d8add4fe57ddae38cf425a5c59014b6e392754259a3607d24b3e51b74a393fc2c30faffd796c45c2e16dfb1fcd85ecdc70fa1231de549223159a4753281af9e2e07fe558324371b491c7df64f3aa823290f09df228a1232d5677754bd5dfa1d3e47185e16b217229e68aa5b2565cdd2d14d4d94c9aa15c0dd891418aa160fe6f638be11c14aad06e6b48449b24c967751b6ecf5863be6899aed5a031c69384543c799102ac2c59e6b2c26044244a1244305adef304ff2e7e6ead54699560d7ea591ffa4c6bd7c8a613dd3ff4d24cef2673937152b2163f26801d29536611a5c2432e676c1e4a1accbb98dc0a35865940235cfb8a172618083e7a8ae10ac2359e46376733f48386989be11e2f2a6f7ebb9f28f6f8f34aeeadcb41a60753ea00faf21368583cc068d00be590ea704770f6415c5bfbec1e53db027edca476310839423ccd6b2d3d7c127fd3f5d4619d399f4bc64dc942a67e101f6b7aea2848397105ff7eba363e0acd5a5540f60a78a7a35ba91590f4efa861b7e5cdeada7c5aa0036f665c8fab3d6bbb2aa009db2ad719644664f902f83d88e61d9314ab16bf9d322392e95c8946747c83c81f2e4b50370559bd3e525e53b7a8b31c802846a6da4fbbe3aeb69f6e3323af8a2def0f4f23f169d850ff5be5e9c50cbb51568aeb3c9977cc10b9a2bdd995273e5e4cc2938197cc9d20d8c4d95d9a7c9907b9c9ae7c6558457e0970eaef267cf9abb8322a80fec3dfc291131514c8a788d24ed9d17b1245a6d1daf26574b246f4bf6166f70c39cd6ff6a26664eb14b9035e660ae22d4b440570384b21e55c3d1d3fe9a060f583eb89f8a05a5dba1e73ada8b30187f4f72e5b06837aed42c233d79f146f6e60f5af4b7026b0b8f22fd40ad8ef81d604698508f9c13bae6a2604ee4971ba70c6dab47204973760bd9e2f1b89a9b5c3552b4df7728163a6e9f5ecc6544e2f55726ddbf343c44f1a6fd0742655c44c18926270b59ac87546090c22613c7fc96833562e7ff5224ddb4143b45b8f8e3b548e8901d4e162505ed1ee2ca3250dbf3c21738ada311adc3b205244ae9a9c09e78396fd916b368891b8e54f034139c08f7e8b7fe5bc37d4de184fe1440d7c068b4c3566bbdfe675ba3d96eeec3edafdd9daf8233904c41b7645aa342e9ce4dd0bf1960110d3f408bce77c2c7d27d9c3250ccf28706efe12eaa76a25792eaeb14c0f7de28fdb4e2533297e6554a7d9a6cc4ac326d3acb4f42ad7701a63e7edaed04e17d0c21b77f02487bd7ee97c4f92742fcae758e959d5898f8fbdcf4a48bc56a0fb7d28067f88e076f3eeaa181520af493fa6d2830d5a7067f51184f940140696c61b8048690d9454ea3927836163d373bd7596a3b758444a42a1e1a842dd4ad728f94de8e333603e4ac4b2f6d1a7f8edcd563c5cf4af229cfbd70cf9abb4f93a81b9ed1707095469b790c0e09f6a3685836c3001483dfa9e2780f03436d001148251c6568e0fc9a187da95bef7dbac9bdc1de94132b7776a22103c634480a3a2f2d30d3b3769d844d02153ea1d5570cacae7578a43f83e931b03ec5cf205e95d9d754576411e7cc713b59129417ed96ef66c9e561eb45e39005c9e6a6d81b16cc2a1252d464898bb789209ac53fc016123a22ccc945666bc4211abf517462b4c667010f7da80830b4c502af4cb11e64b40e756208d2412e446bbed210e54b1dea5265df7fe6f2092</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">需要密码查看</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>随笔</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>写作练习</tag>
+      
+      <tag>每日一篇</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>blender学习记录之自动售货机</title>
     <link href="/2024/07/26/blender2/"/>
     <url>/2024/07/26/blender2/</url>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>原文链接在这里：<ahref="https://youtu.be/BzTN2yTgTj0?si=S0nUNVi2O9fATo_W">My Blender 2D/3DProcess with Grease Pencil</a></p><p>最后建的模型有问题，先保留，完成简单的之后再继续。 # 建模</p><p>首先先建立一个自动售货机的大体模型，shift+a建立一个cube，一个cylinder，然后通过倒角shift+b和缩小cylinder底面实现下图,再创建填充后的一个circle（可以采用在编辑模式按f或者左下角把fill-type设置为N-GON(因为我用的英文版)）</p><figure><img src="/img/blenderpic/blender2-1.png" alt="模型" /><figcaption aria-hidden="true">模型</figcaption></figure><p>再创建一个camera，用于观察，通过坐标轴下边的camera图标进入相机镜头，将camera和view绑定，找到一个合使的观察位置，分割两个视角(在边缘处点击右键选择verticalsplit)，一个用于摄像机，一个用于建模，如下图<br /><img src="/img/blenderpic/blender2-2.png" alt="模型2" /></p><p>在主体模型上挖两个坑，都是用内插面i＋挤压e实现，再给上面的坑加上货架cube实现,添加modifier，array，下图是我的设置<br /><img src="/img/blenderpic/blender2-3.png" alt="模型3" /></p><p>以下图为例创建三个panel，采用ctrl+F2可以给创建好的快速重命名，建好后都加入集合，可以适当将machine的顶部放大，最后按a全选右键选择shadeauto smooth <img src="/img/blenderpic/blender2-4.png" alt="模型4" /></p><p>接着在machine上建按钮，采用两个modifier实现按钮的排列,完成后做出不同类型的瓶子。放入machine中</p><h1 id="material">material</h1><p>将左下角的mode改为ShaderEditor,添加sun，调整角度，选中machine在mode里新建material</p><p>在采用 line art时出现问题，暂未解决，问题如下: <imgsrc="/img/blenderpic/blender2-5.png" alt="模型5" />模型有部分未被线条包围有些不该出现线条的地方产生了线条。。</p><p>此文暂存！</p>]]></content>
     
     
     <categories>
@@ -29,11 +83,11 @@
   
   
   <entry>
-    <title>blender学习记录之Smooth 3D living room  1</title>
+    <title>blender学习记录之Smooth 3D living room</title>
     <link href="/2024/07/25/blender1/"/>
     <url>/2024/07/25/blender1/</url>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>记录一下学习blender的学习过程,这个模型是按照油管上的一个博主的内容做的<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Blender 3D Beginner Tutorial: Smooth 3D Living Room](https://youtu.be/dEGJeVnWZAA?si=sKss_-PK8lcj_gxr)">[1]</span></a></sup>，</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="https://youtu.be/dEGJeVnWZAA?si=sKss_-PK8lcj_gxr">Blender 3D Beginner Tutorial: Smooth 3D Living Room</a><a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>记录一下学习blender的学习过程,这个模型是按照油管上的一个博主的内容做的<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[Blender 3D Beginner Tutorial: Smooth 3D Living Room](https://youtu.be/dEGJeVnWZAA?si=eq0xsQRhnSmW-qhl)">[1]</span></a></sup>，</p><h2 id="参考">参考</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1"class="footnote-text"><span><a href="https://youtu.be/dEGJeVnWZAA?si=eq0xsQRhnSmW-qhl">Blender3D Beginner Tutorial: Smooth 3D Living Room</a><a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
     
     
     <categories>

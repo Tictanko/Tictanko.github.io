@@ -19,22 +19,29 @@
   <meta name="author" content="Jane Z">
   <meta name="keywords" content="Jane">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="blender学习记录之Smooth 3D living room">
+    <meta name="description" content="原文链接在这里：My Blender 2D&#x2F;3D Process with Grease Pencil 最后建的模型有问题，先保留，完成简单的之后再继续。 # 建模 首先先建立一个自动售货机的大体模型，shift+a建立一个cube，一个cylinder，然后通过倒角shift+b和缩小cylinder底面实现下图 ,再创建填充后的一个circle（可以采用在编辑模式按f或者左下角把fil">
+<meta property="og:type" content="article">
+<meta property="og:title" content="blender学习记录之自动售货机">
 <meta property="og:url" content="https://tictanko.github.io/2024/07/26/blender2/index.html">
 <meta property="og:site_name" content="Tictanko">
+<meta property="og:description" content="原文链接在这里：My Blender 2D&#x2F;3D Process with Grease Pencil 最后建的模型有问题，先保留，完成简单的之后再继续。 # 建模 首先先建立一个自动售货机的大体模型，shift+a建立一个cube，一个cylinder，然后通过倒角shift+b和缩小cylinder底面实现下图 ,再创建填充后的一个circle（可以采用在编辑模式按f或者左下角把fil">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tictanko.github.io/img/blenderpic/blender2-1.png">
+<meta property="og:image" content="https://tictanko.github.io/img/blenderpic/blender2-2.png">
+<meta property="og:image" content="https://tictanko.github.io/img/blenderpic/blender2-3.png">
+<meta property="og:image" content="https://tictanko.github.io/img/blenderpic/blender2-4.png">
 <meta property="article:published_time" content="2024-07-26T01:34:37.000Z">
-<meta property="article:modified_time" content="2024-07-26T02:56:09.421Z">
+<meta property="article:modified_time" content="2024-07-26T15:30:25.835Z">
 <meta property="article:author" content="Jane Z">
 <meta property="article:tag" content="blender学习">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tictanko.github.io/img/blenderpic/blender2-1.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>blender学习记录之Smooth 3D living room - Tictanko</title>
+  <title>blender学习记录之自动售货机 - Tictanko</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -72,7 +79,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"tictanko.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"tictanko.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -200,7 +207,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="blender学习记录之Smooth 3D living room"></span>
+            <span id="subtitle" data-typed-text="blender学习记录之自动售货机"></span>
           
         </div>
 
@@ -223,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          398 字
         
       </span>
     
@@ -234,7 +241,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -280,12 +287,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">blender学习记录之Smooth 3D living room</h1>
+            <h1 id="seo-header">blender学习记录之自动售货机</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-07-26T10:56:09+08:00
+                    本文最后更新于 2024-07-26T23:30:25+08:00
                   
                   
 
@@ -295,7 +302,32 @@
             
               <div class="markdown-body">
                 
-                
+                <p>原文链接在这里：<a
+target="_blank" rel="noopener" href="https://youtu.be/BzTN2yTgTj0?si=S0nUNVi2O9fATo_W">My Blender 2D/3D
+Process with Grease Pencil</a></p>
+<p>最后建的模型有问题，先保留，完成简单的之后再继续。 # 建模</p>
+<p>首先先建立一个自动售货机的大体模型，shift+a建立一个cube，一个cylinder，然后通过倒角shift+b和缩小cylinder底面实现下图
+,再创建填充后的一个circle（可以采用在编辑模式按f或者左下角把fill-type设置为N-GON(因为我用的英文版)）</p>
+<figure>
+<img src="/img/blenderpic/blender2-1.png" srcset="/img/loading.gif" lazyload alt="模型" />
+<figcaption aria-hidden="true">模型</figcaption>
+</figure>
+<p>再创建一个camera，用于观察，通过坐标轴下边的camera图标进入相机镜头，将camera和view绑定，找到一个合使的观察位置，分割两个视角(在边缘处点击右键选择vertical
+split)，一个用于摄像机，一个用于建模，如下图<br />
+<img src="/img/blenderpic/blender2-2.png" srcset="/img/loading.gif" lazyload alt="模型2" /></p>
+<p>在主体模型上挖两个坑，都是用内插面i＋挤压e实现，再给上面的坑加上货架cube实现,添加modifier，array，下图是我的设置<br />
+<img src="/img/blenderpic/blender2-3.png" srcset="/img/loading.gif" lazyload alt="模型3" /></p>
+<p>以下图为例创建三个panel，采用ctrl+F2可以给创建好的快速重命名，建好后都加入集合，可以适当将machine的顶部放大，最后按a全选右键选择shade
+auto smooth <img src="/img/blenderpic/blender2-4.png" srcset="/img/loading.gif" lazyload alt="模型4" /></p>
+<p>接着在machine上建按钮，采用两个modifier实现按钮的排列,完成后做出不同类型的瓶子。放入machine中</p>
+<h1 id="material">material</h1>
+<p>将左下角的mode改为Shader
+Editor,添加sun，调整角度，选中machine在mode里新建material</p>
+<p>在采用 line art时出现问题，暂未解决，问题如下: <img
+src="/img/blenderpic/blender2-5.png" srcset="/img/loading.gif" lazyload alt="模型5" />
+模型有部分未被线条包围有些不该出现线条的地方产生了线条。。</p>
+<p>此文暂存！</p>
+
                 
               </div>
             
@@ -340,7 +372,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>blender学习记录之Smooth 3D living room</div>
+      <div>blender学习记录之自动售货机</div>
       <div>https://tictanko.github.io/2024/07/26/blender2/</div>
     </div>
     <div class="license-meta">
@@ -385,12 +417,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2024/07/26/wrinting727/" title="随笔一篇">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">随笔一篇</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/07/25/blender1/" title="blender学习记录之Smooth 3D living room  1">
-                        <span class="hidden-mobile">blender学习记录之Smooth 3D living room  1</span>
+                      <a href="/2024/07/25/blender1/" title="blender学习记录之Smooth 3D living room">
+                        <span class="hidden-mobile">blender学习记录之Smooth 3D living room</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
