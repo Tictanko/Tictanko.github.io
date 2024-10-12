@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>数据探索</title>
+    <link href="/2024/10/08/matlab/datanalyse/"/>
+    <url>/2024/10/08/matlab/datanalyse/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="异常值分析示例">异常值分析示例</h1><p>源码数据在GitHub本文件夹的source下边，对餐饮系统的销售额数据进行处理。采用箱型图检测异常值。代码中xls文件和代码处于同一个文件夹中.这里计算四分位箱图上下界时采用常数1.5是因为使用1.5 倍的 IQR来定义上下限的做法源于经验法则，主要是为了平衡灵敏度与稳健性。一些情况下也有用其他值的，值越大定义的异常值标准越宽松<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs matab">catering_sale = &#x27;catering_sale.xls&#x27;;<br>index = 1;  %用于后面提取第一列数据<br>%% 读入数据<br>[num,txt] = xlsread(catering_sale); %通过xlsread获取到文件中的数字和字符<br>sales = num(2:end,index);   %提取出num中从2到最后的第一列，之前定义了index=1<br>rows = size(sales,1); % 表示返回矩阵的第一维度也就是行，<br><br>%% 处理缺失值<br>nanvalue = find(isnan(sales));<br>if isempty(nanvalue)<br>    disp(&#x27;没有缺失值！&#x27;);<br>else <br>    row_ = size(nanvalue,1);%缺失值的行数，即缺失值数量<br>    disp([&#x27;缺失值个数为:&#x27; num2str(row_) &#x27;,缺失率为:&#x27; num2str(row_/rows)])%方括号 [] 可以将字符串和通过 num2str 转换为字符串的数值拼接在一起，形成一个完整的输出字符串<br>end<br><br>%% 设置箱型图属性<br>q_ = prctile(sales,[25,75]);%获取百分位数，这里是四分位箱图所需的上四分位和下四分位位置<br>p25 = q_(1,1);%获取上四分位数<br>p75 = q_(1,2);%下四分位数<br>% 四分位距 (IQR)：计算方法为 p75 - p25<br>upper = p75+1.5*(p75-p25);%计算上界,1.5是一个常用的常数，用于定义异常值的边界。<br>lower = p25-1.5*(p75-p25);%计算下界<br>upper_indexes = sales(sales&gt;upper);%返回一个逻辑数组，sales中如果大于upper返回true，再取出sales中取true的值<br>lower_indexes = sales(sales&lt;lower);% 同理<br>indexes = [upper_indexes;lower_indexes];%upper_indexes 和 lower_indexes 垂直拼接在一起，生成一个新的数组 indexes，其中全为异常的值，确保都是列向量，如果不是可用&#x27;转置<br>indexes =sort(indexes);%对indexes进行排序，返回一个升序<br>%% 画箱型图<br>figure<br>hold on;%新图可以叠加在旧图上<br>boxplot(sales,&#x27;whisker&#x27;,1.5,&#x27;outliersize&#x27;,6); %whisker是指定须的长度，须由IQR决定，IQR是上四分位数与下四分位数之差。<br>%须指的是延伸至最小非异常值和最大非异常值。outliersize 控制异常值的标记大小，便于突出异常数据点<br>rows = size(indexes,1);%返回indexes的大小<br>flag = 0;%用于控制文本标注的位置<br>for i = 1:rows %遍历所有的异常值<br>    if flag == 0<br>        text(1+0.01,indexes(i,1),num2str(indexes(i,1)));%text用于在指定位置添加文本，<br>        %第一个参数是x坐标，后面是y坐标即文本标记在异常值当前所在位置，最后一个参数将数值转换为字符串在图中表示出<br>        flag = 1;%下一次循环换一个位置标注<br>    else <br>        text(1-0.017*length(num2str(indexes(i,1))),indexes(i,1),num2str(indexes(i,1)));<br>        %根据文本长度计算x坐标，确保不重叠，后面两个参数同理<br>        flag = 0;<br>    end<br>end<br>hold off;<br>disp(&#x27;餐饮销售数据缺失值及异常值检测完成！&#x27;)<br><br></code></pre></td></tr></table></figure> 结果如下： <embedsrc="/img/matlabpic/boxplot_sale.fig" /></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>matlab</tag>
+      
+      <tag>数据挖掘</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Matplotlib Note</title>
     <link href="/2024/08/18/post/"/>
     <url>/2024/08/18/post/</url>
