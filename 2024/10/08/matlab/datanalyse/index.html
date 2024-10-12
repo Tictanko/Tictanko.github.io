@@ -19,16 +19,16 @@
   <meta name="author" content="Jane Z">
   <meta name="keywords" content="Jane">
   
-    <meta name="description" content="异常值分析示例 源码数据在GitHub本文件夹的source下边，对餐饮系统的销售额数据进行处理。采用箱型图检测异常值。 代码中xls文件和代码处于同一个文件夹中.这里计算四分位箱图上下界时采用常数1.5是因为使用 1.5 倍的 IQR 来定义上下限的做法源于经验法则，主要是为了平衡灵敏度与稳健性。一些情况下也有用其他值的，值越大定义的异常值标准越宽松 12345678910111213">
+    <meta name="description" content="箱型图 源码数据在GitHub本文件夹的source下边，对餐饮系统的销售额数据进行处理。采用箱型图检测异常值。 代码中xls文件和代码处于同一个文件夹中.这里计算四分位箱图上下界时采用常数1.5是因为使用 1.5 倍的 IQR 来定义上下限的做法源于经验法则，主要是为了平衡灵敏度与稳健性。一些情况下也有用其他值的，值越大定义的异常值标准越宽松 123456789101112131415">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据探索">
+<meta property="og:title" content="箱型图">
 <meta property="og:url" content="https://tictanko.github.io/2024/10/08/matlab/datanalyse/index.html">
 <meta property="og:site_name" content="Tictanko">
-<meta property="og:description" content="异常值分析示例 源码数据在GitHub本文件夹的source下边，对餐饮系统的销售额数据进行处理。采用箱型图检测异常值。 代码中xls文件和代码处于同一个文件夹中.这里计算四分位箱图上下界时采用常数1.5是因为使用 1.5 倍的 IQR 来定义上下限的做法源于经验法则，主要是为了平衡灵敏度与稳健性。一些情况下也有用其他值的，值越大定义的异常值标准越宽松 12345678910111213">
+<meta property="og:description" content="箱型图 源码数据在GitHub本文件夹的source下边，对餐饮系统的销售额数据进行处理。采用箱型图检测异常值。 代码中xls文件和代码处于同一个文件夹中.这里计算四分位箱图上下界时采用常数1.5是因为使用 1.5 倍的 IQR 来定义上下限的做法源于经验法则，主要是为了平衡灵敏度与稳健性。一些情况下也有用其他值的，值越大定义的异常值标准越宽松 123456789101112131415">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://tictanko.github.io/img/cat.jfif">
 <meta property="article:published_time" content="2024-10-08T13:15:39.461Z">
-<meta property="article:modified_time" content="2024-10-12T13:22:18.028Z">
+<meta property="article:modified_time" content="2024-10-12T15:02:42.961Z">
 <meta property="article:author" content="Jane Z">
 <meta property="article:tag" content="matlab">
 <meta property="article:tag" content="数据挖掘">
@@ -39,7 +39,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>数据探索 - Tictanko</title>
+  <title>箱型图 - Tictanko</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,7 +205,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数据探索"></span>
+            <span id="subtitle" data-typed-text="箱型图"></span>
           
         </div>
 
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          812 字
+          1.3k 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          7 分钟
+          12 分钟
         
       </span>
     
@@ -285,12 +285,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">数据探索</h1>
+            <h1 id="seo-header">箱型图</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-10-12T21:22:18+08:00
+                    本文最后更新于 2024-10-12T23:02:42+08:00
                   
                   
 
@@ -300,13 +300,29 @@
             
               <div class="markdown-body">
                 
-                <h1 id="异常值分析示例">异常值分析示例</h1>
+                <h1 id="箱型图">箱型图</h1>
 <p>源码数据在GitHub本文件夹的source下边，对餐饮系统的销售额数据进行处理。采用箱型图检测异常值。
 代码中xls文件和代码处于同一个文件夹中.这里计算四分位箱图上下界时采用常数1.5是因为使用
 1.5 倍的 IQR
-来定义上下限的做法源于经验法则，主要是为了平衡灵敏度与稳健性。一些情况下也有用其他值的，值越大定义的异常值标准越宽松
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs matab">catering_sale = &#x27;catering_sale.xls&#x27;;<br>index = 1;  %用于后面提取第一列数据<br>%% 读入数据<br>[num,txt] = xlsread(catering_sale); %通过xlsread获取到文件中的数字和字符<br>sales = num(2:end,index);   %提取出num中从2到最后的第一列，之前定义了index=1<br>rows = size(sales,1); % 表示返回矩阵的第一维度也就是行，<br><br>%% 处理缺失值<br>nanvalue = find(isnan(sales));<br>if isempty(nanvalue)<br>    disp(&#x27;没有缺失值！&#x27;);<br>else <br>    row_ = size(nanvalue,1);%缺失值的行数，即缺失值数量<br>    disp([&#x27;缺失值个数为:&#x27; num2str(row_) &#x27;,缺失率为:&#x27; num2str(row_/rows)])%方括号 [] 可以将字符串和通过 num2str 转换为字符串的数值拼接在一起，形成一个完整的输出字符串<br>end<br><br>%% 设置箱型图属性<br>q_ = prctile(sales,[25,75]);%获取百分位数，这里是四分位箱图所需的上四分位和下四分位位置<br>p25 = q_(1,1);%获取上四分位数<br>p75 = q_(1,2);%下四分位数<br>% 四分位距 (IQR)：计算方法为 p75 - p25<br>upper = p75+1.5*(p75-p25);%计算上界,1.5是一个常用的常数，用于定义异常值的边界。<br>lower = p25-1.5*(p75-p25);%计算下界<br>upper_indexes = sales(sales&gt;upper);%返回一个逻辑数组，sales中如果大于upper返回true，再取出sales中取true的值<br>lower_indexes = sales(sales&lt;lower);% 同理<br>indexes = [upper_indexes;lower_indexes];%upper_indexes 和 lower_indexes 垂直拼接在一起，生成一个新的数组 indexes，其中全为异常的值，确保都是列向量，如果不是可用&#x27;转置<br>indexes =sort(indexes);%对indexes进行排序，返回一个升序<br>%% 画箱型图<br>figure<br>hold on;%新图可以叠加在旧图上<br>boxplot(sales,&#x27;whisker&#x27;,1.5,&#x27;outliersize&#x27;,6); %whisker是指定须的长度，须由IQR决定，IQR是上四分位数与下四分位数之差。<br>%须指的是延伸至最小非异常值和最大非异常值。outliersize 控制异常值的标记大小，便于突出异常数据点<br>rows = size(indexes,1);%返回indexes的大小<br>flag = 0;%用于控制文本标注的位置<br>for i = 1:rows %遍历所有的异常值<br>    if flag == 0<br>        text(1+0.01,indexes(i,1),num2str(indexes(i,1)));%text用于在指定位置添加文本，<br>        %第一个参数是x坐标，后面是y坐标即文本标记在异常值当前所在位置，最后一个参数将数值转换为字符串在图中表示出<br>        flag = 1;%下一次循环换一个位置标注<br>    else <br>        text(1-0.017*length(num2str(indexes(i,1))),indexes(i,1),num2str(indexes(i,1)));<br>        %根据文本长度计算x坐标，确保不重叠，后面两个参数同理<br>        flag = 0;<br>    end<br>end<br>hold off;<br>disp(&#x27;餐饮销售数据缺失值及异常值检测完成！&#x27;)<br><br></code></pre></td></tr></table></figure> 结果如下： <embed
-src="/img/matlabpic/boxplot_sale.fig" /></p>
+来定义上下限的做法源于经验法则，主要是为了平衡灵敏度与稳健性。一些情况下也有用其他值的，值越大定义的异常值标准越宽松</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs matab">catering_sale = &#x27;catering_sale.xls&#x27;;<br>index = 1;  %用于后面提取第一列数据<br>%% 读入数据<br>[num,txt] = xlsread(catering_sale); %通过xlsread获取到文件中的数字和字符<br>sales = num(2:end,index);   %提取出num中从2到最后的第一列，之前定义了index=1<br>rows = size(sales,1); % 表示返回矩阵的第一维度也就是行，<br><br>%% 处理缺失值<br>nanvalue = find(isnan(sales));<br>if isempty(nanvalue)<br>    disp(&#x27;没有缺失值！&#x27;);<br>else <br>    row_ = size(nanvalue,1);%缺失值的行数，即缺失值数量<br>    disp([&#x27;缺失值个数为:&#x27; num2str(row_) &#x27;,缺失率为:&#x27; num2str(row_/rows)])%方括号 [] 可以将字符串和通过 num2str 转换为字符串的数值拼接在一起，形成一个完整的输出字符串<br>end<br><br>%% 设置箱型图属性<br>q_ = prctile(sales,[25,75]);%获取百分位数，这里是四分位箱图所需的上四分位和下四分位位置<br>p25 = q_(1,1);%获取上四分位数<br>p75 = q_(1,2);%下四分位数<br>% 四分位距 (IQR)：计算方法为 p75 - p25<br>upper = p75+1.5*(p75-p25);%计算上界,1.5是一个常用的常数，用于定义异常值的边界。<br>lower = p25-1.5*(p75-p25);%计算下界<br>upper_indexes = sales(sales&gt;upper);%返回一个逻辑数组，sales中如果大于upper返回true，再取出sales中取true的值<br>lower_indexes = sales(sales&lt;lower);% 同理<br>indexes = [upper_indexes;lower_indexes];%upper_indexes 和 lower_indexes 垂直拼接在一起，生成一个新的数组 indexes，其中全为异常的值，确保都是列向量，如果不是可用&#x27;转置<br>indexes =sort(indexes);%对indexes进行排序，返回一个升序<br>%% 画箱型图<br>figure<br>hold on;%新图可以叠加在旧图上<br>boxplot(sales,&#x27;whisker&#x27;,1.5,&#x27;outliersize&#x27;,6); %whisker是指定须的长度，须由IQR决定，IQR是上四分位数与下四分位数之差。<br>%须指的是延伸至最小非异常值和最大非异常值。outliersize 控制异常值的标记大小，便于突出异常数据点<br>rows = size(indexes,1);%返回indexes的大小<br>flag = 0;%用于控制文本标注的位置<br>for i = 1:rows %遍历所有的异常值<br>    if flag == 0<br>        text(1+0.01,indexes(i,1),num2str(indexes(i,1)));%text用于在指定位置添加文本，<br>        %第一个参数是x坐标，后面是y坐标即文本标记在异常值当前所在位置，最后一个参数将数值转换为字符串在图中表示出<br>        flag = 1;%下一次循环换一个位置标注<br>    else <br>        text(1-0.017*length(num2str(indexes(i,1))),indexes(i,1),num2str(indexes(i,1)));<br>        %根据文本长度计算x坐标，确保不重叠，后面两个参数同理<br>        flag = 0;<br>    end<br>end<br>hold off;<br>disp(&#x27;餐饮销售数据缺失值及异常值检测完成！&#x27;)<br><br></code></pre></td></tr></table></figure>
+<p>结果如下： <img src="/img/matlabpic/boxplot_sale.png" srcset="/img/loading.gif" lazyload
+alt="results" /></p>
+<p>以下是一些修改箱型图外观的方法 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs matlab">boxplot(data, <span class="hljs-string">&#x27;Colors&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, <span class="hljs-string">&#x27;Widths&#x27;</span>, <span class="hljs-number">0.5</span>, <span class="hljs-string">&#x27;Whisker&#x27;</span>, <span class="hljs-number">1.5</span>, ...<span class="hljs-string">&#x27;Symbol&#x27;</span>, <span class="hljs-string">&#x27;k*&#x27;</span>, <span class="hljs-string">&#x27;OutlierSize&#x27;</span>, <span class="hljs-number">8</span>);<br><span class="hljs-comment">%&#x27;Colors&#x27;：设置箱线图的颜色。可以使用颜色字符（如 &#x27;r&#x27; 表示红色）或 RGB 数组（如 [0, 0, 1] 表示蓝色）。</span><br><span class="hljs-comment">%&#x27;Widths&#x27;：控制箱体的宽度，默认值为 0.5,&#x27;Symbol&#x27;：定义异常值的符号样式，如 &#x27;k*&#x27; 表示黑色星号。</span><br><span class="hljs-comment">%可以使用 findobj 函数查找并修改特定的图形对象，例如箱体、中位数线和须</span><br><span class="hljs-comment">% 修改箱体的颜色为蓝色</span><br>set(findobj(h, <span class="hljs-string">&#x27;Tag&#x27;</span>, <span class="hljs-string">&#x27;Box&#x27;</span>), <span class="hljs-string">&#x27;Color&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>);<br><br><span class="hljs-comment">% 修改中位数线的颜色为红色</span><br>set(findobj(h, <span class="hljs-string">&#x27;Tag&#x27;</span>, <span class="hljs-string">&#x27;Median&#x27;</span>), <span class="hljs-string">&#x27;Color&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, <span class="hljs-string">&#x27;LineWidth&#x27;</span>, <span class="hljs-number">1.5</span>);<br><br><span class="hljs-comment">% 修改须的颜色为绿色</span><br>set(findobj(h, <span class="hljs-string">&#x27;Tag&#x27;</span>, <span class="hljs-string">&#x27;Whisker&#x27;</span>), <span class="hljs-string">&#x27;Color&#x27;</span>, <span class="hljs-string">&#x27;g&#x27;</span>, <span class="hljs-string">&#x27;LineStyle&#x27;</span>, <span class="hljs-string">&#x27;--&#x27;</span>);<br><br><span class="hljs-comment">% 修改异常值的标记为紫色圆圈</span><br>set(findobj(h, <span class="hljs-string">&#x27;Tag&#x27;</span>, <span class="hljs-string">&#x27;Outliers&#x27;</span>), <span class="hljs-string">&#x27;MarkerEdgeColor&#x27;</span>, <span class="hljs-string">&#x27;m&#x27;</span>);<br><br><span class="hljs-comment">% 要为箱线图的箱体添加填充颜色，可以使用 patch 函数：</span><br><span class="hljs-comment">% 获取箱体对象并添加填充颜色</span><br>boxes = findobj(gca, <span class="hljs-string">&#x27;Tag&#x27;</span>, <span class="hljs-string">&#x27;Box&#x27;</span>);<br><span class="hljs-keyword">for</span> <span class="hljs-built_in">j</span> = <span class="hljs-number">1</span>:<span class="hljs-built_in">length</span>(boxes)<br>    patch(get(boxes(<span class="hljs-built_in">j</span>), <span class="hljs-string">&#x27;XData&#x27;</span>), get(boxes(<span class="hljs-built_in">j</span>), <span class="hljs-string">&#x27;YData&#x27;</span>), <span class="hljs-string">&#x27;c&#x27;</span>, <span class="hljs-string">&#x27;FaceAlpha&#x27;</span>, <span class="hljs-number">0.5</span>);<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure> findobj(gca, 'Tag',
+'Box') 会查找当前坐标轴（gca）中所有 Tag 为 'Box' 的对象 findobj
+根据对象的 Tag
+属性来找到特定的图形元素，例如箱体（Box）、中位数线（Median）、须（Whisker）等。MATLAB
+自动为不同的图形元素设置了特定的 Tag
+属性，这些属性可以用来查找和修改这些元素。例如：</p>
+<ul>
+<li>箱体的 <code>Tag</code> 属性为 <code>'Box'</code></li>
+<li>中位数线的 <code>Tag</code> 属性为 <code>'Median'</code></li>
+<li>须的 <code>Tag</code> 属性为 <code>'Whisker'</code></li>
+<li>异常值的 <code>Tag</code> 属性为 <code>'Outliers'</code></li>
+</ul>
+<p>其中，h 是一个图形对象或对象的句柄（handle）。当使用 boxplot
+函数创建箱线图时，可以将返回的句柄赋给变量
+h，以便以后对图形的各个元素进行访问和修改。</p>
 
                 
               </div>
@@ -354,7 +370,7 @@ src="/img/matlabpic/boxplot_sale.fig" /></p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数据探索</div>
+      <div>箱型图</div>
       <div>https://tictanko.github.io/2024/10/08/matlab/datanalyse/</div>
     </div>
     <div class="license-meta">
@@ -398,6 +414,12 @@ src="/img/matlabpic/boxplot_sale.fig" /></p>
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/10/12/matlab/drawinganalyse/" title="数据特征分析">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">数据特征分析</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
