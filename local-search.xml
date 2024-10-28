@@ -4,11 +4,32 @@
   
   
   <entry>
+    <title>一文记住二分查找法</title>
+    <link href="/2024/10/28/%E5%88%B7%E9%A2%98/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    <url>/2024/10/28/%E5%88%B7%E9%A2%98/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="mor">记忆方法</h1><p>1、判断点 &gt;= 或 &gt;</p><p>2、边界点位置 0~len-1 or 0~len</p><p>3、左右边界的情况 mid -1、mid+1 or mid+1</p><h1 id="二分查找法">二分查找法</h1><p>二分查找法的关键在于区间的选取，不同区间选取导致不同结果，容易忽略某些位置导致计算不到的情况。这里主要是叙述一个左闭右闭区间和左闭右开区间作为例子。</p><h2 id="左闭合右闭合区间">左闭合右闭合区间</h2><p>这里的关键是要理解，当左尽头端点属于范围内，右尽头端点也属于范围内时，此时我们设想一种极端情况，这时候已经查找到最后一个点，左右标识都是指向这一个点，那么我们判不判断这个点，答案是判断，那么为什么呢？很简单，这个时候只要想着左区间尽头是这个点，右区间尽头也是这个点，那么这个点是包含在查找范围内的，那我们当然要判断这个点属不属于范围内部，因此，我们在这种情况下的判断范围应该是<strong>left&gt;=right</strong>，这是<strong>第1个</strong>需要注意的点。<strong>其次</strong>就是right和left的值，因为是包含left和right的，所以他们的值就应该是尽头的位置。<strong>第3点</strong>就是在判断边界点时应该如何操作，首先在这个算法中我们有两个边界点，一个left，一个right，那么在更新中点时，left和right值该如何选取呢，首先我们先考虑left，也就是左边界，当我们需要判断的数值大于这个中间值时，代表着这个数值是在中间值的右边，那么我们就应该把left更新到中间点处，直接使用left=mid这样的表达正确吗？如果你这样表达就刚好踩入了第一个坑，因为，根据我们之前所叙述的内容，这里的mid实际上是已经判断过的点，那么之后我们便不会再判断这个点，故我们需要把left的值右移一位也就是说<strong>left= mid+1</strong>，同理，对于右边界的点也是做同样处理变为<strong>right =mid-1</strong>这里因为刚好是左移一位。到目前位置，所以需要注意的点我们都考虑到了，接下来就是代码实现了<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 在这里nums是我们要查找的有序数组，千万注意一定是有序的！</span><br><span class="hljs-comment"># target即我们的目标</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">binary_search_1</span>(<span class="hljs-params">nums,target</span>):<br>    left = <span class="hljs-number">0</span><br>    <span class="hljs-comment">#这里right应该减1，因为nums是从0到len(nums)-1的，而非1到len(nums)</span><br>    right = <span class="hljs-built_in">len</span>(nums)-<span class="hljs-number">1</span><br>    <span class="hljs-comment">#这里right必须大于等于left，理由我们已经解释过了</span><br>    <span class="hljs-keyword">while</span> right &gt;= left:<br>    <span class="hljs-comment">#这里计算mid的值，这样计算的原因是只计算（right - left)//2只是计算了二者之间的距离，还得加上</span><br>    <span class="hljs-comment">#之前的基准，就像我们曾经学过的计算直角坐标系上两个正x值之间的中点的x坐标。//表示取整</span><br>        mid = left +(right-left)//<span class="hljs-number">2</span><br>    <span class="hljs-comment">#进入判断语句，根据我们之前的分析进行编写</span><br>        <span class="hljs-keyword">if</span>(nums[mid]==target):<br>            <span class="hljs-keyword">return</span> mid<br>        <span class="hljs-keyword">elif</span>(nums[mid]&gt;target):<br>            right = mid - <span class="hljs-number">1</span><br>        <span class="hljs-keyword">else</span> :<br>            left = mid + <span class="hljs-number">1</span><br>    <span class="hljs-comment">#循环结束后还没返回证明目标不在数组中，故返回-1</span><br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span><br>    <br></code></pre></td></tr></table></figure></p><h2 id="左闭合右开区间">左闭合右开区间</h2><p>在这种情况中我们也是主要对我在<ahref="#mor">记忆方法</a>模块提到的三个地方进行注意，首先这个地方判断没有包含=号，用同样的方法理解，这个中点实际上是不需要判断，因为不包含它，而第二点选择0~len是因为右边是开区间，故不能直接等于尽头，如果直接等于就是闭区间了，最后一个情况是因为我们只需要考虑在左边的点是会被判断的情况，故左边的更新为中点时，则需要将其括出去，故为left+1.综上所述其代码如下<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 在这里nums是我们要查找的有序数组，千万注意一定是有序的！</span><br><span class="hljs-comment"># target即我们的目标</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">binary_search_2</span>(<span class="hljs-params">nums,target</span>):<br>     left = <span class="hljs-number">0</span><br>        right = <span class="hljs-built_in">len</span>(nums)<br>        <span class="hljs-keyword">while</span> right&gt;left:<br>            mid=left+(right - left) // <span class="hljs-number">2</span><br>            <span class="hljs-keyword">if</span> nums[mid]==target:<br>                <span class="hljs-keyword">return</span> mid<br>            <span class="hljs-keyword">elif</span> nums[mid]&gt;target:<br>                right = mid<br>            <span class="hljs-keyword">else</span>:<br>                left = mid+<span class="hljs-number">1</span><br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span><br>    <br></code></pre></td></tr></table></figure></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>leetcode</tag>
+      
+      <tag>刷题</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>数据特征分析</title>
     <link href="/2024/10/12/matlab/drawinganalyse/"/>
     <url>/2024/10/12/matlab/drawinganalyse/</url>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>和箱型图同一个数据集进行分析。</p><h2 id="定量数据分析">定量数据分析</h2><p>主要分析极差、组距和组数、决定分点。绘制频率分布表和频率分布直方图。</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>。</p><h2 id="定量数据分析">定量数据分析</h2><p>主要分析极差、组距和组数、决定分点。绘制频率分布表和频率分布直方图。</p>]]></content>
     
     
     <categories>

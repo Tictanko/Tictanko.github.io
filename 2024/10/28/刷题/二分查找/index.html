@@ -19,27 +19,25 @@
   <meta name="author" content="Jane Z">
   <meta name="keywords" content="Jane">
   
-    <meta name="description" content="。 定量数据分析 主要分析极差、组距和组数、决定分点。绘制频率分布表和频率分布直方图。">
+    <meta name="description" content="记忆方法 1、判断点 &gt;&#x3D; 或 &gt; 2、边界点位置 0~len-1 or 0~len 3、左右边界的情况 mid -1、mid+1 or mid+1 二分查找法 二分查找法的关键在于区间的选取，不同区间选取导致不同结果，容易忽略某些位置导致计算不到的情况。 这里主要是叙述一个左闭右闭区间和左闭右开区间作为例子。 左闭合右闭合区间 这里的关键是要理解，当左尽头端点属于范围">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据特征分析">
-<meta property="og:url" content="https://tictanko.github.io/2024/10/12/matlab/drawinganalyse/index.html">
+<meta property="og:title" content="一文记住二分查找法">
+<meta property="og:url" content="https://tictanko.github.io/2024/10/28/%E5%88%B7%E9%A2%98/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/index.html">
 <meta property="og:site_name" content="Tictanko">
-<meta property="og:description" content="。 定量数据分析 主要分析极差、组距和组数、决定分点。绘制频率分布表和频率分布直方图。">
+<meta property="og:description" content="记忆方法 1、判断点 &gt;&#x3D; 或 &gt; 2、边界点位置 0~len-1 or 0~len 3、左右边界的情况 mid -1、mid+1 or mid+1 二分查找法 二分查找法的关键在于区间的选取，不同区间选取导致不同结果，容易忽略某些位置导致计算不到的情况。 这里主要是叙述一个左闭右闭区间和左闭右开区间作为例子。 左闭合右闭合区间 这里的关键是要理解，当左尽头端点属于范围">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tictanko.github.io/img/cat.jfif">
-<meta property="article:published_time" content="2024-10-12T15:04:14.904Z">
-<meta property="article:modified_time" content="2024-10-12T15:12:49.675Z">
+<meta property="article:published_time" content="2024-10-28T14:46:20.000Z">
+<meta property="article:modified_time" content="2024-10-28T15:14:18.536Z">
 <meta property="article:author" content="Jane Z">
-<meta property="article:tag" content="matlab">
-<meta property="article:tag" content="数据挖掘">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="刷题">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://tictanko.github.io/img/cat.jfif">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>数据特征分析 - Tictanko</title>
+  <title>一文记住二分查找法 - Tictanko</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,13 +197,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/night.jfif') no-repeat center center; background-size: cover;">
+     style="background: url('/img/1298880.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数据特征分析"></span>
+            <span id="subtitle" data-typed-text="一文记住二分查找法"></span>
           
         </div>
 
@@ -216,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-12 23:04" pubdate>
-          2024年10月12日 晚上
+        <time datetime="2024-10-28 22:46" pubdate>
+          2024年10月28日 晚上
         </time>
       </span>
     
@@ -228,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          36 字
+          1.1k 字
         
       </span>
     
@@ -239,7 +237,7 @@
         
         
         
-          1 分钟
+          9 分钟
         
       </span>
     
@@ -285,12 +283,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">数据特征分析</h1>
+            <h1 id="seo-header">一文记住二分查找法</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2024-10-12T23:12:49+08:00
+                    本文最后更新于 2024-10-28T23:14:18+08:00
                   
                   
 
@@ -300,9 +298,24 @@
             
               <div class="markdown-body">
                 
-                <p>。</p>
-<h2 id="定量数据分析">定量数据分析</h2>
-<p>主要分析极差、组距和组数、决定分点。绘制频率分布表和频率分布直方图。</p>
+                <h1 id="mor">记忆方法</h1>
+<p>1、判断点 &gt;= 或 &gt;</p>
+<p>2、边界点位置 0~len-1 or 0~len</p>
+<p>3、左右边界的情况 mid -1、mid+1 or mid+1</p>
+<h1 id="二分查找法">二分查找法</h1>
+<p>二分查找法的关键在于区间的选取，不同区间选取导致不同结果，容易忽略某些位置导致计算不到的情况。
+这里主要是叙述一个左闭右闭区间和左闭右开区间作为例子。</p>
+<h2 id="左闭合右闭合区间">左闭合右闭合区间</h2>
+<p>这里的关键是要理解，当左尽头端点属于范围内，右尽头端点也属于范围内时，此时我们设想一种极端情况，这时候已经查找到最后一个点，左右标识都是指向这一个点，那么我们判不判断这个点，答案是判断，那么为什么呢？很简单，这个时候只要想着左区间尽头是这个点，右区间尽头也是这个点，那么这个点是包含在查找范围内的，那我们当然要判断这个点属不属于范围内部，因此，我们在这种情况下的判断范围应该是<strong>left&gt;=right</strong>，这是<strong>第1个</strong>需要注意的点。<strong>其次</strong>就是right和left的值，因为是包含left和right的，所以他们的值就应该是尽头的位置。
+<strong>第3点</strong>就是在判断边界点时应该如何操作，首先在这个算法中我们有两个边界点，一个left，一个right，那么在更新中点时，left和right值该如何选取呢，首先我们先考虑left，也就是左边界，当我们需要判断的数值大于这个中间值时，代表着这个数值是在中间值的右边，那么我们就应该把left更新到中间点处，直接使用left=mid这样的表达正确吗？如果你这样表达就刚好踩入了第一个坑，因为，根据我们之前所叙述的内容，这里的mid实际上是已经判断过的点，那么之后我们便不会再判断这个点，故我们需要把left的值右移一位也就是说<strong>left
+= mid+1</strong>，同理，对于右边界的点也是做同样处理变为<strong>right =
+mid-1</strong>这里因为刚好是左移一位。
+到目前位置，所以需要注意的点我们都考虑到了，接下来就是代码实现了
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 在这里nums是我们要查找的有序数组，千万注意一定是有序的！</span><br><span class="hljs-comment"># target即我们的目标</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">binary_search_1</span>(<span class="hljs-params">nums,target</span>):<br>    left = <span class="hljs-number">0</span><br>    <span class="hljs-comment">#这里right应该减1，因为nums是从0到len(nums)-1的，而非1到len(nums)</span><br>    right = <span class="hljs-built_in">len</span>(nums)-<span class="hljs-number">1</span><br>    <span class="hljs-comment">#这里right必须大于等于left，理由我们已经解释过了</span><br>    <span class="hljs-keyword">while</span> right &gt;= left:<br>    <span class="hljs-comment">#这里计算mid的值，这样计算的原因是只计算（right - left)//2只是计算了二者之间的距离，还得加上</span><br>    <span class="hljs-comment">#之前的基准，就像我们曾经学过的计算直角坐标系上两个正x值之间的中点的x坐标。//表示取整</span><br>        mid = left +(right-left)//<span class="hljs-number">2</span><br>    <span class="hljs-comment">#进入判断语句，根据我们之前的分析进行编写</span><br>        <span class="hljs-keyword">if</span>(nums[mid]==target):<br>            <span class="hljs-keyword">return</span> mid<br>        <span class="hljs-keyword">elif</span>(nums[mid]&gt;target):<br>            right = mid - <span class="hljs-number">1</span><br>        <span class="hljs-keyword">else</span> :<br>            left = mid + <span class="hljs-number">1</span><br>    <span class="hljs-comment">#循环结束后还没返回证明目标不在数组中，故返回-1</span><br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span><br>    <br></code></pre></td></tr></table></figure></p>
+<h2 id="左闭合右开区间">左闭合右开区间</h2>
+<p>在这种情况中我们也是主要对我在<a
+href="#mor">记忆方法</a>模块提到的三个地方进行注意，首先这个地方判断没有包含=号，用同样的方法理解，这个中点实际上是不需要判断，因为不包含它，而第二点选择0~len是因为右边是开区间，故不能直接等于尽头，如果直接等于就是闭区间了，最后一个情况是因为我们只需要考虑在左边的点是会被判断的情况，故左边的更新为中点时，则需要将其括出去，故为left+1.综上所述其代码如下
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 在这里nums是我们要查找的有序数组，千万注意一定是有序的！</span><br><span class="hljs-comment"># target即我们的目标</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">binary_search_2</span>(<span class="hljs-params">nums,target</span>):<br>     left = <span class="hljs-number">0</span><br>        right = <span class="hljs-built_in">len</span>(nums)<br>        <span class="hljs-keyword">while</span> right&gt;left:<br>            mid=left+(right - left) // <span class="hljs-number">2</span><br>            <span class="hljs-keyword">if</span> nums[mid]==target:<br>                <span class="hljs-keyword">return</span> mid<br>            <span class="hljs-keyword">elif</span> nums[mid]&gt;target:<br>                right = mid<br>            <span class="hljs-keyword">else</span>:<br>                left = mid+<span class="hljs-number">1</span><br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span><br>    <br></code></pre></td></tr></table></figure></p>
 
                 
               </div>
@@ -311,34 +324,13 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="category-chain-item">学习记录</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/matlab/" class="print-no-link">#matlab</a>
+        <a href="/tags/leetcode/" class="print-no-link">#leetcode</a>
       
-        <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/" class="print-no-link">#数据挖掘</a>
+        <a href="/tags/%E5%88%B7%E9%A2%98/" class="print-no-link">#刷题</a>
       
     </div>
   
@@ -350,8 +342,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数据特征分析</div>
-      <div>https://tictanko.github.io/2024/10/12/matlab/drawinganalyse/</div>
+      <div>一文记住二分查找法</div>
+      <div>https://tictanko.github.io/2024/10/28/刷题/二分查找/</div>
     </div>
     <div class="license-meta">
       
@@ -363,7 +355,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年10月12日</div>
+          <div>2024年10月28日</div>
         </div>
       
       
@@ -395,18 +387,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/28/%E5%88%B7%E9%A2%98/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="一文记住二分查找法">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">一文记住二分查找法</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/08/matlab/datanalyse/" title="箱型图">
-                        <span class="hidden-mobile">箱型图</span>
+                      <a href="/2024/10/12/matlab/drawinganalyse/" title="数据特征分析">
+                        <span class="hidden-mobile">数据特征分析</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -429,7 +415,7 @@
         var options = Object.assign(
           {"clientID":"Ov23lirlMsKYnMnBGcym","clientSecret":"4e37e744a945bb3be841a89a666b6d1602d7cb3b","repo":"Tictanko.github.io","owner":"Tictanko","admin":["Tictanko"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: '10cf82bfb0779d5fc8f1185fe3f9ed39'
+            id: 'e3166bc1d0ba9d6592aa580cce287176'
           }
         )
         var gitalk = new Gitalk(options);
@@ -490,12 +476,6 @@
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -747,49 +727,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
