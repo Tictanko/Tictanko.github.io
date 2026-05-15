@@ -115,6 +115,31 @@
   
   
   <entry>
+    <title>3D ROOM</title>
+    <link href="/2024/08/08/3droom/"/>
+    <url>/2024/08/08/3droom/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="快捷键记录">快捷键记录</h1><p>shift+a创建物体，g调整位置，s调整大小，小键盘的0进入摄像头视角右下角输出属性调整相机分辨率，物体数据属性中的镜头的类型选择正交</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>blender学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>机器学习预备知识</title>
     <link href="/2024/07/28/%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/"/>
     <url>/2024/07/28/%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/</url>
