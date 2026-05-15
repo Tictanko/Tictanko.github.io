@@ -14,5 +14,21 @@ const ap = new APlayer({
             lrc: 'lrc1.lrc', //音频歌词，配合上面的lrcType使用
             theme: '#ffffff' //切换到此音频时的主题色，比上面的 theme 优先级高
         },
+        {
+            name: '等闲之辈', //音频名称
+            artist: '疯兔', //音频艺术家
+            url: 'http://music.163.com/song/media/outer/url?id=1845995858.mp3', //音频外链
+            cover: 'http://p2.music.126.net/KWOHwodB16Ehl6FCulWG-g==/109951165989673810.jpg?param=130y130', //音频封面
+            lrc: 'lrc1.lrc', //音频歌词，配合上面的lrcType使用
+            theme: '#ffffff' //切换到此音频时的主题色，比上面的 theme 优先级高
+        },
+        {
+            name: '不炎热的夏天', //音频名称
+            artist: '津静公路No.26 / Dragon7DISS / 一棵葱', //音频艺术家
+            url: 'http://music.163.com/song/media/outer/url?id=1433315303.mp3', //音频外链
+            cover: 'http://p1.music.126.net/msXvACcskN_QlMeTFEX1fA==/109951164831473826.jpg?param=130y130', //音频封面
+            lrc: 'lrc1.lrc', //音频歌词，配合上面的lrcType使用
+            theme: '#ffffff' //切换到此音频时的主题色，比上面的 theme 优先级高
+        },
     ]
 });
